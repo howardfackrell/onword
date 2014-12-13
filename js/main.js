@@ -1,5 +1,10 @@
 $(function() {	
 	fetchRandomWords();
+
+	$(".word").on('click', function(event) {
+		$(".word").removeClass('selected');
+		$(this).addClass('selected');
+	});
 })
 
 var WORD_COUNT = 5;
@@ -27,7 +32,7 @@ var fetchRandomWords = function() {
 		var order = randomOrder();	
 		$.each(results, function(i, wordContainer){
 			var rIndex = order[i];
-			$('.word'+rIndex).text(wordContainer.word);
+			$('#row-'+rIndex+' .word').text(wordContainer.word);
 			fetchDefinition(wordContainer.word, rIndex);
 		});
 	})
@@ -55,7 +60,7 @@ var fetchDefinition = function(word, i) {
 		var definitionContainer = definitionContainerList[0];
 		var definition = definitionContainer.text;
 		var partOfSpeech = definitionContainer.partOfSpeech;	
-		var definitionDiv = $('.definition'+i);
+		var definitionDiv = $('#row-'+i+' .definition');
 		definitionDiv.text(partOfSpeech + " " + definition);		
 		definitionDiv.attr('data-word', word);
 	})

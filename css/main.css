@@ -1,0 +1,25 @@
+p {
+	border-radius:10px;
+	border : 1px solid black;
+	padding : 2em;
+}
+
+
+#game {
+	margin-top:5em;
+}
+
+.word .definition {
+	min-height:100px;
+	height:100%;
+	margin: 1em 1em;
+	padding: 1em;
+}
+
+.spacer {
+	min-height: 20px;
+}
+
+.selected {
+	border : 3px solid green;
+}

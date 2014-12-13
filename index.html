@@ -3,28 +3,41 @@
 <head>
 	<meta charset="UTF-8">
 	<title>OnWord</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-	<p>This will be a great word game.  Just wait.</p>
-	<div id="result">
-		<div class="words">
-		  <div class="word word0"></div>
-		  <div class="word word1"></div>
-		  <div class="word word2"></div>
-		  <div class="word word3"></div>
-		  <div class="word word4"></div>
-		</div>
-		<div class="definitions">
-		  <div class="definition definition0"></div>
-		  <div class="definition definition1"></div>
-		  <div class="definition definition2"></div>
-		  <div class="definition definition3"></div>
-		  <div class="definition definition4"></div>
-		</div>
+	<div id="game" class="container-fluid">
+	  <div id="row-0" class="row">
+		<div class="col-xs-3"><p class="word"></p></div>
+		<div class="col-xs-9"><p class="definition"></p></div> 
+	  </div>
+	  <div class="row spacer"></div>
+	  <div id="row-1" class="row">
+		<div class="col-xs-3"><p class="word"></p></div>
+		<div class="col-xs-9"><p class="definition"></p></div> 
+	  </div>
+	  <div class="row spacer"></div>
+	  <div id="row-2" class="row">
+		<div class="col-xs-3"><p class="word"></p></div>
+		<div class="col-xs-9"><p class="definition"></p></div> 
+	  </div>
+	  <div class="row spacer"></div>
+	  <div id="row-3" class="row">
+		<div class="col-xs-3"><p class="word"></p></div>
+		<div class="col-xs-9"><p class="definition"></p></div> 
+	  </div>
+	  <div class="row spacer"></div>
+	  <div id="row-4" class="row">
+		<div class="col-xs-3"><p class="word"></p></div>
+		<div class="col-xs-9"><p class="definition"></p></div> 
+	  </div>
 	</div>
 
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 <script src="js/main.js"></script>
+
 </body>
 </html>
