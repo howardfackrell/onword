@@ -1,5 +1,6 @@
 $(function() {	
 	fetchRandomWords();
+	$(".row").data('junk', "something");
 
 	$(".word").on('click', function(event) {
 		$(".word").removeClass('selected');
@@ -9,12 +10,20 @@ $(function() {
 	$(".definition").on('click', function(event) {
 		var defIndex=$(this).closest(".row").data("idx");
 		var wordIndex=$('.selected').closest('.row').data('idx');
-		console.log(defIndex + " " + wordIndex);
 
-		var tempDef = $('#row-'+wordIndex).find('.definition');		
-		var temp = tempDef.text();
-		tempDef.text($(this).text());
+		var targetDef = $('#row-'+wordIndex).find('.definition');		
+		
+		var temp = targetDef.text();
+		var tempWord = targetDef.data('word');
+		console.log(tempWord + " " + temp);
+
+		targetDef.text($(this).text());
+		targetDef.attr('data-word', $(this).data('word'));
+		console.log("set targetdef word to " + $(this).data('word'));
+
 		$(this).text(temp);
+		$(this).attr('data-word', tempWord);
+		console.log("set this word to " + tempWord);
 	});
 })
 
@@ -41,9 +50,11 @@ var fetchRandomWords = function() {
 		})
 	.done(function(results){	
 		var order = randomOrder();	
+		console.log(order);
 		$.each(results, function(i, wordContainer){
 			var rIndex = order[i];
-			$('#row-'+rIndex+' .word').text(wordContainer.word);
+			console.log("order " + rIndex);
+			$('#row-'+i+' .word').text(wordContainer.word);
 			fetchDefinition(wordContainer.word, rIndex);
 		});
 	})
