@@ -1,3 +1,7 @@
+var WORD_COUNT = 5;
+
+
+
 $(function() {	
 	fetchRandomWords();
 	$(".row").data('junk', "something");
@@ -7,27 +11,31 @@ $(function() {
 		$(this).addClass('selected');
 	});
 
-	$(".definition").on('click', function(event) {
+	$(".definition").on('click', function(event) {		
 		var defIndex=$(this).closest(".row").data("idx");
 		var wordIndex=$('.selected').closest('.row').data('idx');
-
-		var targetDef = $('#row-'+wordIndex).find('.definition');		
-		
-		var temp = targetDef.text();
-		var tempWord = targetDef.data('word');
-		console.log(tempWord + " " + temp);
-
-		targetDef.text($(this).text());
-		targetDef.attr('data-word', $(this).data('word'));
-		console.log("set targetdef word to " + $(this).data('word'));
-
-		$(this).text(temp);
-		$(this).attr('data-word', tempWord);
-		console.log("set this word to " + tempWord);
+		swapDefinitions(defIndex, wordIndex);
 	});
 })
 
-var WORD_COUNT = 5;
+var swapDefinitions = function(indexA, indexB) {
+	console.log("a: " + indexA+ "  b: " + indexB);
+	var a = $("#row-"+indexA).find('.definition');
+	var b = $("#row-"+indexB).find('.definition');
+
+	console.log("a: " + a.text());
+	console.log("b: " + b.text());
+	var tempDef = a.text();
+	var tempWord = a.attr('data-word');
+
+	a.text(b.text());
+	a.attr('data-word', b.attr('data-word'));
+
+	b.text(tempDef);
+	b.attr('data-word', tempWord);
+}
+
+
 
 var fetchRandomWords = function() {
 	//http://api.wordnik.com:80/v4/words.json/randomWords?hasDictionaryDef=true&includePartOfSpeech=noun&minCorpusCount=0&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=5&maxLength=-1&limit=10&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5
