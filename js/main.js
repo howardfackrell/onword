@@ -4,7 +4,6 @@ var WORD_COUNT = 5;
 
 $(function() {	
 	fetchRandomWords();
-	$(".row").data('junk', "something");
 
 	$(".word").on('click', function(event) {
 		$(".word").removeClass('selected');
@@ -16,15 +15,29 @@ $(function() {
 		var wordIndex=$('.selected').closest('.row').data('idx');
 		swapDefinitions(defIndex, wordIndex);
 	});
+
+	$("#score-button").on('click', function(event) {
+		var total = 0;
+		var correct = 0;
+		for (var i = 0; i < WORD_COUNT; i++) {
+			var word = $('#row-'+i+' .word').text()
+			var defWord = $('#row-'+i+' .definition').attr('data-word');
+			total++;
+			console.log(word + "----" + defWord);
+			if (word === defWord) {
+				correct++;
+			}
+		}
+
+		$("#score-result").text("You got " +correct + " out of " + total);
+
+	});
 })
 
 var swapDefinitions = function(indexA, indexB) {
-	console.log("a: " + indexA+ "  b: " + indexB);
 	var a = $("#row-"+indexA).find('.definition');
 	var b = $("#row-"+indexB).find('.definition');
 
-	console.log("a: " + a.text());
-	console.log("b: " + b.text());
 	var tempDef = a.text();
 	var tempWord = a.attr('data-word');
 
@@ -58,10 +71,8 @@ var fetchRandomWords = function() {
 		})
 	.done(function(results){	
 		var order = randomOrder();	
-		console.log(order);
 		$.each(results, function(i, wordContainer){
 			var rIndex = order[i];
-			console.log("order " + rIndex);
 			$('#row-'+i+' .word').text(wordContainer.word);
 			fetchDefinition(wordContainer.word, rIndex);
 		});
