@@ -5,6 +5,17 @@ $(function() {
 		$(".word").removeClass('selected');
 		$(this).addClass('selected');
 	});
+
+	$(".definition").on('click', function(event) {
+		var defIndex=$(this).closest(".row").data("idx");
+		var wordIndex=$('.selected').closest('.row').data('idx');
+		console.log(defIndex + " " + wordIndex);
+
+		var tempDef = $('#row-'+wordIndex).find('.definition');		
+		var temp = tempDef.text();
+		tempDef.text($(this).text());
+		$(this).text(temp);
+	});
 })
 
 var WORD_COUNT = 5;
