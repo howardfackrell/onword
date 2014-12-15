@@ -1,25 +1,66 @@
+body {
+	font-family: 'Courgette', cursive;
+}
+
+.header > h1, h2 {
+	font-size: 2em;
+	display: inline;
+}
+
+.header > h1 {
+	font-size: 4em;
+	font-family: 'Passion One', cursive;	
+	margin-right: 1em;
+}
+
+.header {
+	padding: 2em;
+	margin-bottom: 2em;
+}
+
+
 p {
 	border-radius:10px;
 	border : 1px solid black;
-	padding : 2em;
+	padding : 1.5em;
 }
 
 
-#game {
-	margin-top:5em;
-}
-
-.word .definition {
-	min-height:100px;
+.word, .definition {
+	min-height:50px;
 	height:100%;
-	margin: 1em 1em;
-	padding: 1em;
+	font-size: 1.4em;
+	margin: .5em .5em .5em .5em;
+}
+
+.word {
+	font-family: 'Passion One', cursive;
+	font-size: 1.4em;		
 }
 
 .spacer {
-	min-height: 20px;
+	min-height: 15px;
 }
 
 .selected {
 	border : 3px solid green;
 }
+
+#score-button {
+	margin: 2em;
+	border-radius: 5px;
+	padding : 1.5em;
+	font-size: 2em;
+}
+.result {
+	display: inline;
+	border: none;
+}
+
+
+
+.dot::before {
+	font-size: .25em;
+	vertical-align: middle;
+}
+

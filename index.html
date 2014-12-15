@@ -3,39 +3,48 @@
 <head>
 	<meta charset="UTF-8">
 	<title>OnWord</title>
+	<link href='http://fonts.googleapis.com/css?family=Courgette|Passion+One:700,400' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+
+	<div class="header" >
+		<h1>On<span class="fa fa-circle dot" /></span>word</h1>
+		<h2>/noun/  A simple game to improve your vocabulary</h2>
+	</div>
+
+
 	<div id="game" class="container-fluid">
 	  <div id="row-0" data-idx="0" class="row question">
-		<div class="col-xs-3"><p class="word"></p></div>
-		<div class="col-xs-9"><p class="definition"></p></div> 
+		<div class="col-xs-4"><p class="word"></p></div>
+		<div class="col-xs-8"><p class="definition"></p></div> 
 	  </div>
 	  <div class="row spacer"></div>
 	  <div id="row-1" data-idx="1" class="row question">
-		<div class="col-xs-3"><p class="word"></p></div>
-		<div class="col-xs-9"><p class="definition"></p></div> 
+		<div class="col-xs-4"><p class="word"></p></div>
+		<div class="col-xs-8"><p class="definition"></p></div> 
 	  </div>
 	  <div class="row spacer"></div>
 	  <div id="row-2" data-idx="2" class="row question">
-		<div class="col-xs-3"><p class="word"></p></div>
-		<div class="col-xs-9"><p class="definition"></p></div> 
+		<div class="col-xs-4"><p class="word"></p></div>
+		<div class="col-xs-8"><p class="definition"></p></div> 
 	  </div>
 	  <div class="row spacer"></div>
 	  <div id="row-3" data-idx="3" class="row question">
-		<div class="col-xs-3"><p class="word"></p></div>
-		<div class="col-xs-9"><p class="definition"></p></div> 
+		<div class="col-xs-4"><p class="word"></p></div>
+		<div class="col-xs-8"><p class="definition"></p></div> 
 	  </div>
 	  <div class="row spacer"></div>
 	  <div id="row-4" data-idx="4" class="row question">
-		<div class="col-xs-3"><p class="word"></p></div>
-		<div class="col-xs-9"><p class="definition"></p></div> 
+		<div class="col-xs-4"><p class="word"></p></div>
+		<div class="col-xs-8"><p class="definition"></p></div> 
 	  </div>
 	  <div class="row spacer"></div>
 	  <div class="row">
 	  	<button id="score-button">Score It!</button>
-	  	<p id="score-result"></p>
+	  	<p id="score-result" class="result"></p>
 	  </div>
 	</div>
 
