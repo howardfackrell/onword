@@ -79,3 +79,7 @@ p {
 .incorrect {
 	border: 3px solid #FF5D33;
 }
+
+.hidden {
+	display : none;
+}

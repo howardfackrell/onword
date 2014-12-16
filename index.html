@@ -5,6 +5,8 @@
 	<title>OnWord</title>
 	<link href='http://fonts.googleapis.com/css?family=Courgette|Passion+One:700,400' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<link rel=" stylesheet" type="text/css" href="css/joyride-2.1.css">
+
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/main.css">
 </head>
@@ -18,7 +20,7 @@
 
 	<div id="game" class="container-fluid">
 	  <div id="row-0" data-idx="0" class="row question">
-		<div class="col-xs-4"><p class="word"></p></div>
+		<div class="col-xs-4"><p class="word joyride-1"></p></div>
 		<div class="col-xs-8"><p class="definition"></p></div> 
 	  </div>
 	  <div class="row spacer"></div>
@@ -29,7 +31,7 @@
 	  <div class="row spacer"></div>
 	  <div id="row-2" data-idx="2" class="row question">
 		<div class="col-xs-4"><p class="word"></p></div>
-		<div class="col-xs-8"><p class="definition"></p></div> 
+		<div class="col-xs-8"><p class="definition joyride-2"></p></div> 
 	  </div>
 	  <div class="row spacer"></div>
 	  <div id="row-3" data-idx="3" class="row question">
@@ -48,8 +50,15 @@
 	  </div>
 	</div>
 
+  <ol id="chooseID" class="hidden">
+    <li data-class="joyride-1">First select a word</li>
+    <li data-class="joyride-2">Next, select the definition that matches to move it next to the word.</li>
+    <li data-id="score-button">After you've lined up all the words and definitions, hit the button to see your score.</li>
+  </ol>
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/jquery.joyride-2.1.js"></script>
+<script src="js/jquery.cookie.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 <script src="js/main.js"></script>
 
