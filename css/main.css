@@ -58,10 +58,11 @@ p {
 	font-size: 3em;
 }
 
-
-
 .dot::before {
 	font-size: .25em;
 	vertical-align: middle;
 }
 
+.incorrect {
+	background-color: red;
+}

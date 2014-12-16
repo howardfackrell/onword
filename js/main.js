@@ -26,6 +26,8 @@ $(function() {
 			console.log(word + "----" + defWord);
 			if (word === defWord) {
 				correct++;
+			} else {
+				$('#row-'+i).find('.definition').addClass('incorrect');
 			}
 		}
 
@@ -33,6 +35,10 @@ $(function() {
 
 	});
 })
+
+var markIncorrect = function(i) {
+	$('#row-'+i).addClass('incorrect');
+}
 
 var swapDefinitions = function(indexA, indexB) {
 	var a = $("#row-"+indexA).find('.definition');
