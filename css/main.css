@@ -35,11 +35,11 @@ p {
 
 .word {
 	font-family: 'Passion One', cursive;
-	font-size: 1.4em;		
+	font-size: 1.8em;		
 }
 
 .spacer {
-	min-height: 15px;
+	min-height: 10px;
 }
 
 .selected {
@@ -47,14 +47,15 @@ p {
 }
 
 #score-button {
-	margin: 2em;
+	margin: 0em 2em;
 	border-radius: 5px;
-	padding : 1.5em;
-	font-size: 2em;
+	padding : 0.2em;
+	font-size: 2.5em;
 }
 .result {
 	display: inline;
 	border: none;
+	font-size: 3em;
 }
 
 
