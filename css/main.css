@@ -1,10 +1,12 @@
 body {
 	font-family: 'Courgette', cursive;
+	background-color: #593532;
 }
 
 .header > h1, h2 {
 	font-size: 2em;
 	display: inline;
+	color : #F2D8CE;	
 }
 
 .header > h1 {
@@ -16,26 +18,29 @@ body {
 .header {
 	padding: 2em;
 	margin-bottom: 2em;
+	text-align: center;
 }
 
 
 p {
 	border-radius:10px;
 	border : 1px solid black;
-	padding : 1.5em;
+		
 }
 
 
 .word, .definition {
 	min-height:50px;
 	height:100%;
-	font-size: 1.4em;
-	margin: .5em .5em .5em .5em;
+	font-size: 2.2em;
+	margin: .25em;
+	background-color : #BF9D95;
+	padding : .3em;
 }
 
 .word {
 	font-family: 'Passion One', cursive;
-	font-size: 1.8em;		
+	font-size: 2.4em;		
 }
 
 .spacer {
@@ -51,11 +56,19 @@ p {
 	border-radius: 5px;
 	padding : 0.2em;
 	font-size: 2.5em;
+	background-color: #8C8379;
 }
+
 .result {
 	display: inline;
 	border: none;
 	font-size: 3em;
+	color : #F2D8CE;
+}
+.result p {
+	display : inline;
+	border : none;
+	margin-right : 1em ;
 }
 
 .dot::before {
@@ -64,5 +77,5 @@ p {
 }
 
 .incorrect {
-	background-color: red;
+	border: 3px solid #FF5D33;
 }

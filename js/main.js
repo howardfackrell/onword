@@ -17,6 +17,7 @@ $(function() {
 	});
 
 	$("#score-button").on('click', function(event) {
+		clearIncorrect();
 		var total = 0;
 		var correct = 0;
 		for (var i = 0; i < WORD_COUNT; i++) {
@@ -27,17 +28,24 @@ $(function() {
 			if (word === defWord) {
 				correct++;
 			} else {
-				$('#row-'+i).find('.definition').addClass('incorrect');
+				markIncorrect(i);
 			}
 		}
 
-		$("#score-result").text("You got " +correct + " out of " + total);
+		var resultArea = $("#score-result");
+		resultArea.empty();
+		resultArea.append($("<p>You got " +correct + " out of " + total + "</p>"));
+		resultArea.append($("<a href='.'>Play Again?</a>"));
 
 	});
 })
 
+var clearIncorrect = function() {
+	$('.definition').removeClass('incorrect');
+}
+
 var markIncorrect = function(i) {
-	$('#row-'+i).addClass('incorrect');
+	$('#row-'+i).find('.definition').addClass('incorrect');
 }
 
 var swapDefinitions = function(indexA, indexB) {
