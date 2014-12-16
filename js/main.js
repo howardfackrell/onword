@@ -66,6 +66,8 @@ var fetchRandomWords = function() {
 			maxCorpusCount : -1,
 			minDictionaryCount : 1,
 			maxDictionaryCount : -1,
+			includePartOfSpeech : 'noun,verb',
+			excludePartOfSpeech : 'noun-plural',
 			minLength : 5,
 			maxLength :-1,
 			limit :WORD_COUNT,
